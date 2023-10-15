@@ -34,8 +34,13 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="index.html">Jumlah Penduduk</a></li>
-                            <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Penduduk Menurut Jenis Kelamin</a></li>
-                            <li><a class="dropdown-item" href="agama.html">Penduduk Menurut Agama yang Dianut</a></li>
+                            <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Jumlah Penduduk Menurut Jenis
+                                    Kelamin</a></li>
+                            <li><a class="dropdown-item" href="umur.html">Jumlah Penduduk Menurut Kelompok Umur</a></li>
+                            <li><a class="dropdown-item" href="luaskec.html">Luas Area Per Kecamatan</a></li>
+                            <li><a class="dropdown-item" href="kemiskinan.html">Garis Kemiskinan</a></li>
+                            <li><a class="dropdown-item" href="produksi.html">Produksi Tanaman Sayuran dan Buah-Buahan
+                                    Semusim</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -54,7 +59,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h6>Jumlah Penduduk Menurut Agama yang Dianut</h6>
+                <h6>Garis Kemiskinan</h6>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -94,23 +99,35 @@
 
     <script>
         var options = {
-            series: [97.97, 1.38, 0.55, 0.1],
+            series: [{
+                name: 'Bawang Merah',
+                data: [318.70, 396.30, 759.61, 1035.48]
+            }, {
+                name: 'Cabai Besar',
+                data: [588.30, 992.60, 3795.35, 1184.97]
+            }, {
+                name: 'Semangka',
+                data: [315, 173, 458.6, 404]
+            }],
             chart: {
-                type: 'donut',
-                width: 500
+                height: 350,
+                type: 'area'
             },
-            labels: ['Islam', 'Protestan', 'Katolik', 'Budha'],
-            responsive: [{
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 200
-                    },
-                    legend: {
-                        position: 'bottom'
-                    }
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'Tahun',
+                categories: ['2019', '2020', '2021', '2022']
+            },
+            yaxis: {
+                title: {
+                    text: 'ton'
                 }
-            }]
+            },
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
