@@ -1,4 +1,3 @@
-# pgweb-acara6
+# Praktikum Pemrograman Web
 Data Kabupaten Kudus, Jawa Tengah
-
-Link produk: [Infografis Kab. Kudus](https://salsabilaeka.github.io/pgweb-acara6/)
+Hasil: [Infografis Kab. Kudus](https://salsabilaeka.github.io/pgweb-acara6/)
